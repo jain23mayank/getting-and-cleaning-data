@@ -52,7 +52,7 @@ tail(data1$subject)
 #final task
 library(dplyr)
 grouped_data<- group_by_at(data1, vars(data1$subject, data1$activity))
-first_test<- summarise(grouped_data, mean(grouped_data[1:81], na.rm= TRUE))
+
 first_test<- summarise_each(grouped_data, funs(mean))
 first_test<- data1%>%
   group_by(subject, activity)%>%
